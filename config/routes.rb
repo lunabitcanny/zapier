@@ -28,6 +28,15 @@ Rails.application.routes.draw do
   #     end
   #   end
   resource :agents
+
+  namespace :api do
+    resources :api_base, :defaults => {:format => 'json'} do
+      get :current_agent, :on => :collection
+    end
+
+    resources :hooks, :defaults => {:format => 'json'} do
+    end
+  end
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
