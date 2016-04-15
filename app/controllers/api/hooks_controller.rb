@@ -1,5 +1,5 @@
 class Api::HooksController < Api::ApiBaseController
-  before_action :authenticate_agent!
+  before_action :doorkeeper_authorize!
 
   def index
     agent = current_resource_owner
