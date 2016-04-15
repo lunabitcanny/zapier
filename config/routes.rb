@@ -29,7 +29,9 @@ Rails.application.routes.draw do
   #   end
   resource :agents do
     match :send_zap , via: [:get, :post]
+
   end
+  post '/api/hooks/:category' => 'hooks#create'
 
   namespace :api do
     resources :api_base, :defaults => {:format => 'json'} do

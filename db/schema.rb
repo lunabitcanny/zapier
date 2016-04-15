@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414142902) do
+ActiveRecord::Schema.define(version: 20160415150304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160414142902) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "webhook_url"
+    t.string   "category"
   end
 
   add_index "agents", ["email"], name: "index_agents_on_email", unique: true, using: :btree
