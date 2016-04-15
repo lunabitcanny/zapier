@@ -8,8 +8,12 @@ class AgentsController < ApplicationController
                              body: data.to_json,
                              headers: {'Content-Type' => 'application/json'})
     if !response.success?
+      puts "if block"
+      puts response
       raise "web hook error - #{response.inspect}"
     else
+      puts "else block"
+      puts response
       flash[:success] = "succesfully zapped"
       redirect_to agents_path
     end
