@@ -3,7 +3,7 @@ class Api::HooksController < Api::ApiBaseController
 
   def index
     #agent = current_resource_owner
-    checkins =[{:id => 1, :title => "blah", :description => "blah", :category => "cat_1"}]
+    checkins =[{:id => 1, :title => "blah", :description => "blah", :category => "Cat 1"}]
     respond_with checkins
   end
 
