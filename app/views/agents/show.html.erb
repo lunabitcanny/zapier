@@ -1,1 +1,11 @@
-<%= current_agent.email %><br><%= link_to "Logout", destroy_agent_session_path, method: 'delete'%>
+<%= current_agent.email %><br>
+<%  if flash[:success].present? %>
+      <h1><%= flash[:success]%></h1>
+<% end %>
+
+
+
+<%= link_to "Trigger Zap", send_zap_agents_path %>
+
+<br>
+<%= link_to "Logout", destroy_agent_session_path, method: 'delete'%>

@@ -27,7 +27,9 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-  resource :agents
+  resource :agents do
+    match :send_zap , via: [:get, :post]
+  end
 
   namespace :api do
     resources :api_base, :defaults => {:format => 'json'} do
