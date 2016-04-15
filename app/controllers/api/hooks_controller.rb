@@ -2,9 +2,9 @@ class Api::HooksController < Api::ApiBaseController
   before_action :doorkeeper_authorize!
 
   def index
-    agent = current_resource_owner
-    @checkins = {:id => 1, :title => "blah", :description => "blah"}
-    respond_with @checkins
+    #agent = current_resource_owner
+    checkins =[{:id => 1, :title => "blah", :description => "blah"}]
+    respond_with checkins
   end
 
   def create
