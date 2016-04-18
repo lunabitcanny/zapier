@@ -34,6 +34,8 @@ Rails.application.routes.draw do
   #post '/api/hooks/:category' => 'hooks#create'
 
   namespace :api do
+    post 'hooks/:category' => 'hooks#create'
+
     resources :api_base, :defaults => {:format => 'json'} do
       get :current_agent, :on => :collection
     end

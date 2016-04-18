@@ -10,7 +10,7 @@ class Api::HooksController < Api::ApiBaseController
   def create
     agent = current_resource_owner
     agent.webhook_url = params[:target_url]
-   # agent.category = params[:category]
+    agent.category = params[:category]
     agent.save
     render json: {id: agent.id}, status: 201
   end
