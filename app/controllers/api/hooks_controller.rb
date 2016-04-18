@@ -8,10 +8,9 @@ class Api::HooksController < Api::ApiBaseController
   end
 
   def create
-    puts params
     agent = current_resource_owner
     agent.webhook_url = params[:target_url]
-    agent.category = params[:category]
+    agent.category = request.url.split('?').last
     agent.save
     render json: {id: agent.id}, status: 201
   end
