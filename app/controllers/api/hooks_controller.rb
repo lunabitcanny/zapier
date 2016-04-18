@@ -8,6 +8,7 @@ class Api::HooksController < Api::ApiBaseController
   end
 
   def create
+    puts params
     agent = current_resource_owner
     agent.webhook_url = params[:target_url]
     agent.category = params[:category]
